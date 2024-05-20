@@ -6,13 +6,13 @@ app = FastAPI()
 
 @app.get("/")
 def hello_world():
-    """"Endpoint que diz Olá mundo!"""
+    """Endpoint que diz Olá mundo!"""
     return {"Hello": "World"}
 
 
 @app.get("/{nome}")
 def ola(nome: str):
-    """"Endpoint que diz Olá e o ID passado!"""
+    """Endpoint que diz Olá e o ID passado!"""
     if not nome:
         pass
     return {"Olá": nome}
@@ -28,13 +28,13 @@ data = [
 
 @app.get("/api/products")
 def get_products():
-    """"Endpoint que lista os produtos!"""
+    """Endpoint que lista os produtos!"""
     return data
 
 
 @app.get("/api/products/{id}")
 def get_products_by_id(id: int):
-    """"Endpoint que lista o produto específico pelo id!"""
+    """Endpoint que lista o produto específico pelo id!"""
     for product in data:
         if product.id == id:
             return product
